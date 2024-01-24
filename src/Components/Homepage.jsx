@@ -8,7 +8,7 @@ const HomePage = () => {
   return (
     <Suspense fallback={<Loading />}>
       <Hero />
-	  <Welcome/>
+      <Welcome />
     </Suspense>
   );
 };
