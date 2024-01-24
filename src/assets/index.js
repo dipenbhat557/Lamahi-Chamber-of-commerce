@@ -20,6 +20,8 @@ import facebook from "./socialMedias/facebook.png"
 import instagram from "./socialMedias/insta.png"
 import twitter from "./socialMedias/twitter.png"
 
+import afterEventBg from "./afterEventBg.png"
+
 export {
   img1,
   img2,
@@ -37,5 +39,6 @@ export {
 	suitcase,
 	facebook,
 	instagram,
-	twitter
+	twitter,
+	afterEventBg
 };

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { heroElements } from "../constants";
 import { img1, img2, img3, logo, FbLogo } from "../assets";
 import "../index.css";
+import {useNavigate} from "react-router-dom";
 
 const Hero = () => {
   const [currentElement, setCurrentElement] = useState(0);
+	const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -97,17 +99,17 @@ const Hero = () => {
             className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
           >
             <div className="h-[10%] h-[13%] flex items-center justify-around">
-              <a href="#">Events</a>
-              <a href="#">Committee</a>
+              <a href="/events">Events</a>
+              <a href="/committee">Committee</a>
               <div className="w-[9%] h-[12%] flex items-center justify-center">
-                <img
+                <a href="/"><img
                   src={logo}
                   alt="logo"
                   className="object-contain rounded-xl"
-                />
+                /></a>
               </div>
-              <a href="#">About us</a>
-              <a href="#">Contact us</a>
+              <a href="/aboutus">About us</a>
+              <a href="/contactus">Contact us</a>
             </div>
           </div>
         </div>

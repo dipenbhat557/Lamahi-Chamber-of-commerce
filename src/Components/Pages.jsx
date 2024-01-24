@@ -4,6 +4,7 @@ import EventPage from "./EventPage";
 import AboutUs from "./AboutUs";
 import ContactUs from "./ContactUs";
 import Committee from "./Committee";
+import AfterEvent from "./AfterEvent";
 
 function Pages() {
   return (
@@ -14,6 +15,8 @@ function Pages() {
         <Route path="/aboutus" element={<AboutUs/>} />
         <Route path="/contactus" element={<ContactUs/>} />
         <Route path="/committee" element={<Committee/>} />
+	  
+        <Route path="/afterevent" element={<AfterEvent/>} />
       </Routes>
     </BrowserRouter>
   );

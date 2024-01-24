@@ -26,6 +26,16 @@ export const eventElements = [
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
     stat: "#upcoming",
     date: "21/01/2023",
+	  name:"Mela",
+	  time:"12:00 am to 12:00 pm",
+	  venue:"School",
+	  agenda:"Something",
+	  speaker:"Kiran Sharma, Siddhant Acharya",
+	  sponsers:"TMT steels",
+	  contact:"98053490258",
+	  food:"something",
+	  audience:"adult",
+	  cancellation:"30 hrs before"
   },
   {
     img: img2,
@@ -33,6 +43,16 @@ export const eventElements = [
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
     stat: "#wrappedUp",
     date: "21/01/2023",
+	  name:"Mela",
+	  time:"12:00 am to 12:00 pm",
+	  venue:"School",
+	  agenda:"Something",
+	  speaker:"Kiran Sharma, Siddhant Acharya",
+	  sponsers:"TMT steels",
+	  contact:"98053490258",
+	  food:"something",
+	  audience:"adult",
+	  cancellation:"30 hrs before"
   },
   {
     img: img3,
@@ -40,6 +60,16 @@ export const eventElements = [
       "Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.",
     stat: "#upcoming",
     date: "21/01/2023",
+	  name:"Mela",
+	  time:"12:00 am to 12:00 pm",
+	  venue:"School",
+	  agenda:"Something",
+	  speaker:"Kiran Sharma, Siddhant Acharya",
+	  sponsers:"TMT steels",
+	  contact:"98053490258",
+	  food:"something",
+	  audience:"adult",
+	  cancellation:"30 hrs before"
   },
 ];
 

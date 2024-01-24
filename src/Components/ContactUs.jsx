@@ -71,6 +71,8 @@ const ContactUs = () => {
           <img src={img3} alt="img3" className="w-[5%] h-full object-contain" />
         </div>
 
+       
+
         <div className="absolute top-10 w-[70%] ml-80 flex items-start justify-around text-white font-semibold text-[25px]">
           <div className="flex items-center justify-around">
             <a href="#">Events</a>
