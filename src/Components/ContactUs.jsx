@@ -72,18 +72,25 @@ const ContactUs = () => {
         </div>
 
        
-
-        <div className="absolute top-10 w-[70%] ml-80 flex items-start justify-around text-white font-semibold text-[25px]">
-          <div className="flex items-center justify-around">
-            <a href="#">Events</a>
-            <a href="#">Committee</a>
-            <div className="w-[9%] h-[12%] flex items-center justify-center">
-              <img src={logo} alt="logo" className="object-contain rounded-xl" />
+<div
+            style={{ marginTop: "45px" }}
+            className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
+          >
+            <div className="h-[10%] h-[13%] flex items-center justify-around">
+              <a href="/events">Events</a>
+              <a href="/committee">Committee</a>
+              <div className="w-[9%] h-[12%] flex items-center justify-center">
+                <a href="/"><img
+                  src={logo}
+                  alt="logo"
+                  className="object-contain rounded-xl"
+                /></a>
+              </div>
+              <a href="/aboutus">About us</a>
+              <a href="/contactus">Contact us</a>
             </div>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
           </div>
-        </div>
+
       </div>
 
 

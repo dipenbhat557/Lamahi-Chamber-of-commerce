@@ -5,6 +5,14 @@ import "../index.css";
 import {useNavigate} from "react-router-dom";
 
 const Hero = () => {
+
+	const clipPathStyle = {
+clipPath: 'polygon(90% 0, 100% 55%, 84% 75%, 65% 81%, 33% 100%, 13% 69%, 21% 0)',
+	}
+const clipPathStyle2 = {
+clipPath: 'polygon(87% 1%, 81% 45%, 73% 69%, 65% 78%, 33% 100%, 9% 75%, 0 0)',
+}
+
   const [currentElement, setCurrentElement] = useState(0);
 	const navigate = useNavigate();
 
@@ -19,6 +27,7 @@ const Hero = () => {
   }, []);
 
   return (
+	  <>
     <div className="w-full h-[500px] sm:h-[880px]">
       <div className="w-full h-full -z-1 relative">
         {heroElements.map((element, index) => (
@@ -115,6 +124,11 @@ const Hero = () => {
         </div>
       </div>
     </div>
+	  <div className="w-full h-[50px] relative">
+        <div className="w-full flex justify-end absolute h-full bg-[#F1E8D7] z-[-1]" style={clipPathStyle}></div>
+        <div className="w-full h-[50px] z-0 bg-slate-800 bg-opacity-[40%] absolute" style={clipPathStyle2}></div>
+      </div>
+	  </>
   );
 };
 

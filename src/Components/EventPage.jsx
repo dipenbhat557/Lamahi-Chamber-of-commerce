@@ -3,8 +3,12 @@ import { FbLogo, eventBg, img2, img3, logo } from "../assets";
 import { styles } from "../styles";
 import { eventElements } from "../constants"; // Assuming you have an array named eventElements
 import Subscriptions from "./Subscriptions";
+import {useNavigate} from "react-router-dom";
 
 const EventPage = () => {
+
+	const navigate = useNavigate();
+
   return (
     <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
@@ -18,17 +22,24 @@ const EventPage = () => {
           <img src={img2} alt="img2" className="w-[5%] h-full object-contain" />
           <img src={img3} alt="img3" className="w-[5%] h-full object-contain" />
         </div>
- <div className="absolute top-10 w-[70%] ml-80 flex items-start justify-around text-white font-semibold text-[25px]">
-          <div className="flex items-center justify-around">
-            <a href="#">Events</a>
-            <a href="#">Committee</a>
-            <div className="w-[9%] h-[12%] flex items-center justify-center">
-              <img src={logo} alt="logo" className="object-contain rounded-xl" />
+          <div
+            style={{ marginTop: "45px" }}
+            className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
+          >
+            <div className="h-[10%] h-[13%] flex items-center justify-around">
+              <a href="/events">Events</a>
+              <a href="/committee">Committee</a>
+              <div className="w-[9%] h-[12%] flex items-center justify-center">
+                <a href="/"><img
+                  src={logo}
+                  alt="logo"
+                  className="object-contain rounded-xl"
+                /></a>
+              </div>
+              <a href="/aboutus">About us</a>
+              <a href="/contactus">Contact us</a>
             </div>
-            <a href="#">About us</a>
-            <a href="#">Contact us</a>
           </div>
-        </div>
       </div>
 
       <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
@@ -42,7 +53,7 @@ const EventPage = () => {
         <div className="flex flex-wrap justify-between items-start h-auto w-full">
           {eventElements.map((event, index) => {
             return (
-				<div key={index} className="h-[550px] w-[28%] flex flex-col justify-between items-center">
+				<div key={index} className="h-[600px] w-[28%] flex flex-col justify-between items-center">
               <div
 
                 className="flex flex-col justify-around h-[80%] w-full rounded-lg hover:bg-[#6D603F] hover:text-white"
@@ -67,7 +78,7 @@ const EventPage = () => {
                 </div>
               </div>
 
-	  <button className="border-4 h-[10%] w-[200px] border-[#6D603F] text-[16px] rounded-lg ">Know more</button>
+	  <button className="border-4 h-[10%] w-[200px] border-[#6D603F] text-[16px] rounded-lg " onClick={()=>navigate("/afterevent")}>Know more</button>
 				</div>
             );
           })}
