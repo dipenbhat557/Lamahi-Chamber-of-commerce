@@ -2,7 +2,7 @@ import {styles} from "../styles";
 
 const AdvocacyAndPolicy = () => {
   return (
-    <div className={`leading-loose ${styles.padding} text-[18px]`}>
+    <div className={`leading-relaxed sm:leading-loose ${styles.padding} pt-0 text-[14px] sm:text-[18px]`}>
       <p><strong>Advocacy and Policy Influence:</strong></p>
       <ol>
         <li>Engage with local and regional authorities to advocate for business-friendly policies.</li>

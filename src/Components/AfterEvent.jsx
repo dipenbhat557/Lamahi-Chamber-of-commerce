@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import {slideIn} from "../utils/motion";
 
 import emailjs from "emailjs-com";
+import Footer from "./Footer";
+import HeroHeader from "./HeroHeader";
+import Navbar from "./Navbar";
 const AfterEvent = () => {
 
  const formRef = useRef();
@@ -68,61 +71,40 @@ const AfterEvent = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 
-        <div className="absolute top-2 left-10 flex items-center justify-start gap-1 z-2">
-          <FbLogo />
-          <img src={img2} alt="img2" className="w-[5%] h-full object-contain" />
-          <img src={img3} alt="img3" className="w-[5%] h-full object-contain" />
-        </div>
-        <div
-            style={{ marginTop: "45px" }}
-            className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
-          >
-            <div className="h-[10%] h-[13%] flex items-center justify-around">
-              <a href="/events">Events</a>
-              <a href="/committee">Committee</a>
-              <div className="w-[9%] h-[12%] flex items-center justify-center">
-                <a href="/"><img
-                  src={logo}
-                  alt="logo"
-                  className="object-contain rounded-xl"
-                /></a>
-              </div>
-              <a href="/aboutus">About us</a>
-              <a href="/contactus">Contact us</a>
-            </div>
-          </div>
-      </div>
+      <HeroHeader/> 
+       <Navbar/>
+		</div>
 
       <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
-        <div className="flex"><p className="text-[35px] text-[#6D603F]">Event</p><p className="bg-[#F1E8D7] text-[18px] rounded-lg p-2 ml-2">#upcoming</p></div>
-        <p className="text-[20px] leading-relaxed text-center">Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.
+        <div className="flex"><p className="text-[22px] sm:text-[35px] text-[#6D603F]">Event</p><p className="bg-[#F1E8D7] text-[12px] sm:text-[18px] rounded-lg p-2 ml-2">#upcoming</p></div>
+        <p className="text-[14px] sm:text-[20px] leading-relaxed text-center">Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.
         </p>
       </div>
 
 		<div className="w-full text-center">
-		<button className="text-[20px] h-[60px] w-[15%] bg-[#6D603F] font-medium text-white rounded-lg p-2">Register now</button>
+		<button className="text-[14px] sm:text-[20px] h-[60px] w-[30%] sm:w-[15%] bg-[#6D603F] font-medium text-white rounded-lg p-1 sm:p-2">Register now</button>
 		</div>
 
 		<div className={`${styles.padding} gap-8 flex flex-col `}>
 
-		<p className="text-[18px] font-medium text-[#6D603F]">Event Name : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Date and Time : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Venue : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Agenda or Schedule : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Speakers and Presenters : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Sponsors and Partners : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Contact Information : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Food and Beverages : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Target Audience : </p>
-		<p className="text-[18px] font-medium text-[#6D603F]">Cancellation Policy : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Event Name : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Date and Time : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Venue : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Agenda or Schedule : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Speakers and Presenters : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Sponsors and Partners : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Contact Information : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Food and Beverages : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Target Audience : </p>
+		<p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Cancellation Policy : </p>
 		</div>
 
-		<p className="ml-16 mt-16 font-medium text-[25px] tracking-wider text-[#6D603F]">Advice</p>
+		<p className="ml-8 sm:ml-16 mt-8 sm:mt-16 font-medium text-[18px] sm:text-[25px] tracking-wider text-[#6D603F]">Advice</p>
 
     <div
-      className={`${styles.padding} flex flex-col sm:flex-row justify-between items-start w-full h-auto`}
+      className={`${styles.padding} flex flex-col sm:flex-row jusitfy-around sm:justify-between items-start w-full h-auto`}
     >
-      <div className=" flex w-full sm:w-[50%] h-auto ml-0">
+      <div className=" flex w-[90%] sm:w-[50%] h-auto ml-0">
         {/* Contact form section */}
         <Suspense fallback={<Loading />}>
           <motion.div
@@ -187,9 +169,11 @@ const AfterEvent = () => {
         id="location"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="w-[50%] h-[500px] my-auto"
+        className="w-full sm:w-[50%] h-[500px] mt-3 sm:mt-0 sm:my-auto"
       ></iframe>
     </div>
+
+		<Footer/>
 
 </>
 

@@ -4,6 +4,9 @@ import { styles } from "../styles";
 import { eventElements } from "../constants"; // Assuming you have an array named eventElements
 import Subscriptions from "./Subscriptions";
 import {useNavigate} from "react-router-dom";
+import Footer from "./Footer";
+import HeroHeader from "./HeroHeader";
+import Navbar from "./Navbar";
 
 const EventPage = () => {
 
@@ -17,43 +20,22 @@ const EventPage = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 
-        <div className="absolute top-2 left-10 flex items-center justify-start gap-1 z-2">
-          <FbLogo />
-          <img src={img2} alt="img2" className="w-[5%] h-full object-contain" />
-          <img src={img3} alt="img3" className="w-[5%] h-full object-contain" />
-        </div>
-          <div
-            style={{ marginTop: "45px" }}
-            className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
-          >
-            <div className="h-[10%] h-[13%] flex items-center justify-around">
-              <a href="/events">Events</a>
-              <a href="/committee">Committee</a>
-              <div className="w-[9%] h-[12%] flex items-center justify-center">
-                <a href="/"><img
-                  src={logo}
-                  alt="logo"
-                  className="object-contain rounded-xl"
-                /></a>
-              </div>
-              <a href="/aboutus">About us</a>
-              <a href="/contactus">Contact us</a>
-            </div>
-          </div>
-      </div>
+      <HeroHeader/> 
+         <Navbar/>
+	  </div>
 
       <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
         <p className="text-[35px] text-[#6D603F]">Events</p>
-        <p className="text-[20px] leading-relaxed text-justify">
+        <p className="text-[14px] sm:text-[20px] leading-relaxed text-justify">
           Join us for an exciting and informative event hosted by the Lamahi Chamber of Commerce! We are thrilled to bring together local businesses, entrepreneurs, and community members to foster collaboration and economic growth in Lamahi. The event will feature engaging discussions on current business trends, networking opportunities, and presentations from industry leaders. Whether you are a seasoned professional or just starting your entrepreneurial journey, this event offers a unique platform to connect, learn, and share ideas. Come be a part of this vibrant gathering that aims to strengthen the business community in Lamahi. Mark your calendars for an enriching experience that promises valuable insights and connections for the growth of your business.
         </p>
       </div>
 
       <div className={`${styles.padding} h-auto w-full flex flex-col items-center justify-between`}>
-        <div className="flex flex-wrap justify-between items-start h-auto w-full">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-start gap-4 h-auto w-full">
           {eventElements.map((event, index) => {
             return (
-				<div key={index} className="h-[600px] w-[28%] flex flex-col justify-between items-center">
+				<div key={index} className="h-[600px] w-full sm:w-[28%] flex flex-col justify-between items-center">
               <div
 
                 className="flex flex-col justify-around h-[80%] w-full rounded-lg hover:bg-[#6D603F] hover:text-white"
@@ -78,7 +60,7 @@ const EventPage = () => {
                 </div>
               </div>
 
-	  <button className="border-4 h-[10%] w-[200px] border-[#6D603F] text-[16px] rounded-lg " onClick={()=>navigate("/afterevent")}>Know more</button>
+	  <button className="border-4 h-[7%] sm:h-[10%] w-[100px] sm:w-[200px] border-[#6D603F] text-[16px] rounded-lg " onClick={()=>navigate("/afterevent")}>Know more</button>
 				</div>
             );
           })}
@@ -89,6 +71,7 @@ const EventPage = () => {
       </div>
 
 	  <Subscriptions/>
+	  <Footer/>
     </>
   );
 };

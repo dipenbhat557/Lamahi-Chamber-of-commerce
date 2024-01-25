@@ -31,7 +31,7 @@ const Footer = () => {
           <p className="text-[14px] sm:text-[16px] text-slate-500">
             +977 98765789, 098769 , 098790
           </p>
-          <p className="text-[14px] sm:text-[16px] text-slate-500">
+          <p className="hidden sm:flextext-[14px] sm:text-[16px] text-slate-500 ">
             lamahichamberofcommerce@gmail.com
           </p>
         </div>
@@ -40,19 +40,19 @@ const Footer = () => {
             Other Links
           </p>
           <a
-            href="/admission"
+            href="/events"
             className="text-[14px] sm:text-[16px] text-slate-500 cursor-pointer"
           >
           Event
           </a>
           <a
-            href="/contact"
+            href="/aboutus"
             className="text-[14px] sm:text-[16px] text-slate-500 cursor-pointer"
           >
            Gallery
           </a>
           <a
-            href="/contact#location"
+            href="/committee"
             className="text-[14px] sm:text-[16px] text-slate-500 cursor-pointer"
           >
            Committee members

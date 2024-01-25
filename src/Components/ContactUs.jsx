@@ -4,6 +4,9 @@ import emailjs from "emailjs-com";
 import Loading from "./Loading";
 import {slideIn} from "../utils/motion";
 import {motion} from "framer-motion"
+import Footer from "./Footer";
+import HeroHeader from "./HeroHeader";
+import Navbar from "./Navbar";
 
 const ContactUs = () => {
 
@@ -65,36 +68,14 @@ const ContactUs = () => {
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 
-        <div className="absolute top-2 left-10 flex items-center justify-start gap-1 z-2">
-          <FbLogo />
-          <img src={img2} alt="img2" className="w-[5%] h-full object-contain" />
-          <img src={img3} alt="img3" className="w-[5%] h-full object-contain" />
-        </div>
+      <HeroHeader/> 
 
        
-<div
-            style={{ marginTop: "45px" }}
-            className="h-full w-[70%]  ml-80 flex items-start justify-around absolute text-white font-semibold text-[25px]"
-          >
-            <div className="h-[10%] h-[13%] flex items-center justify-around">
-              <a href="/events">Events</a>
-              <a href="/committee">Committee</a>
-              <div className="w-[9%] h-[12%] flex items-center justify-center">
-                <a href="/"><img
-                  src={logo}
-                  alt="logo"
-                  className="object-contain rounded-xl"
-                /></a>
-              </div>
-              <a href="/aboutus">About us</a>
-              <a href="/contactus">Contact us</a>
-            </div>
-          </div>
-
+<Navbar/>
       </div>
 
 
-      <div className="flex flex-col sm:flex-row justify-between items-start w-full h-auto sm:mx-8 pl-24">
+      <div className="flex flex-col sm:flex-row justify-between items-start w-[90%] mx-auto sm:w-full h-auto sm:mx-8  sm:pl-24">
         <div className=" flex w-full sm:w-[50%] h-auto ml-0  sm:ml-10">
           {/* Contact form section */}
           <Suspense fallback={<Loading />}>
@@ -197,7 +178,7 @@ const ContactUs = () => {
         className="w-full h-[350px]  mt-4"
 
       ></iframe>
-
+<Footer/>
 </>
 	)
 

@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
+import {styles} from "../styles";
 const Subscription = () => {
   const handleSubscribe = () => {};
   return (
     <motion.div
       variants={fadeIn("up", "spring", 0.5, 0.75)}
-      className="flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center mt-6 bg-gradient-to-b from-[#6D603F] via-[#B09768] to-[#F1E8D7] pt-4"
+      className={`${styles.padding} flex flex-col w-[100%] h-[330px] sm:h-[300px] justify-center items-center bg-gradient-to-b from-[#6D603F] via-[#B09768] to-[#F1E8D7] pt-4`}
     >
       <div className="flex flex-row w-[25%] items-center justify-center mt-2">
         <div className="w-[8%] h-[5px] border-b-4 border-[#DEA71D]  mr-2 flex-grow" />
@@ -24,7 +25,7 @@ const Subscription = () => {
         <input
           type="text"
           placeholder="Enter your mail address"
-          className="p-2 px-4 sm:px-10 rounded-xl"
+          className="p-2 w-[80%] px-4 sm:px-10 rounded-xl"
         />
         <button
           onClick={handleSubscribe}
