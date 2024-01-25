@@ -6,6 +6,7 @@ import View from "./View";
 import Subscriptions from "./Subscriptions";
 import Press from "./Press";
 import Contact from "./Contact";
+import Footer from "./Footer";
 
 const Hero = lazy(() => import("./Hero"));
 
@@ -19,7 +20,9 @@ const HomePage = () => {
       <Subscriptions />
       <Press />
       <Contact />
+      <Footer></Footer>
     </Suspense>
+   
   );
 };
 export default HomePage;
