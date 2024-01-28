@@ -104,7 +104,7 @@ const Press = () => {
                   <p className="text-[14px] sm:text-[25px] w-[70%] font-medium">
                     {ele.content}
                   </p>
-                  <button className="bg-[#6D603F] text-[14px] sm:text-[25px] rounded-lg w-[40%] h-[50px]">
+                  <button className="bg-[#6D603F] text-[14px] sm:text-[20px] rounded-lg w-[35%] h-[50px]">
                     Read more
                   </button>
                 </div>
@@ -120,7 +120,7 @@ const Press = () => {
 
       
       <div className="w-full flex items-center justify-center">
-        <button className="w-[50%] sm:w-[20%] h-[40px] sm:h-[60px] bg-[#6D603F] p-2 text-[14px] sm:text-[30px] rounded-xl text-white mt-3">
+      <button className="w-[50%] sm:w-[17%] h-[40px] sm:h-[50px] bg-[#6D603F] p-2 text-[14px] sm:text-[22px] rounded-xl text-white mt-3">
           Learn more
         </button>
       </div>

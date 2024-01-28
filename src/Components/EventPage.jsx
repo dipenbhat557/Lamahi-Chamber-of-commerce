@@ -1,7 +1,7 @@
 
 import { FbLogo, eventBg, img2, img3, logo } from "../assets";
 import { styles } from "../styles";
-import { eventElements } from "../constants"; // Assuming you have an array named eventElements
+import { eventElements } from "../constants"; 
 import Subscriptions from "./Subscriptions";
 import {useNavigate} from "react-router-dom";
 import Footer from "./Footer";
@@ -32,42 +32,39 @@ const EventPage = () => {
       </div>
 
       <div className={`${styles.padding} h-auto w-full flex flex-col items-center justify-between`}>
-        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-start gap-4 h-auto w-full">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between items-start gap-4 h-auto w-full">
           {eventElements.map((event, index) => {
             return (
-				<div key={index} className="h-[600px] w-full sm:w-[28%] flex flex-col justify-between items-center">
-              <div
+              <div key={index} className="h-[600px] sm:h-[680px] w-full sm:w-[28%] flex flex-col justify-between items-center">
+                <div
 
-                className="flex flex-col justify-around h-[80%] w-full rounded-lg hover:bg-[#6D603F] hover:text-white"
-              >
-                <div className="w-full h-[50%] relative">
-                  <img
-                    src={event.img}
-                    alt={`img-${index}`}
-                    className="object-cover w-full h-full rounded-t-lg"
-                  />
-                  <p className="absolute bg-[#F1E8D7] text-slate-800 top-0 right-0 text-[14px] w-[27%] h-[13%] p-2 rounded-bl-md rounded-tr-lg">
-                    {event.stat}
-                  </p>
+                  className="flex flex-col justify-around h-[90%] w-full rounded-lg hover:bg-[#6D603F] hover:text-white"
+                >
+                  <div className="w-full h-[50%] relative">
+                    <img
+                      src={event.img}
+                      alt={`img-${index}`}
+                      className="object-cover w-full h-full rounded-t-lg"
+                    />
+                    <p className="absolute bg-[#F1E8D7] text-slate-800 top-0 right-0 text-[12px] w-[27%] h-[13%] p-2 rounded-bl-md rounded-tr-lg">
+                      {event.stat}
+                    </p>
+                  </div>
+                  <div className="w-[full] h-[50%] flex flex-col ">
+                    <p className="w-full h-[10%] pr-3 text-end mt-2">
+                      {event.date}
+                    </p>
+                    <p className="w-full h-[90%] p-3 leading-loose text-[18px]">
+                      {event.content}
+                    </p>
+                  </div>
                 </div>
-                <div className="w-[full] h-[50%] flex flex-col ">
-                  <p className="w-full h-[10%] pr-3 text-end mt-2">
-                    {event.date}
-                  </p>
-                  <p className="w-full h-[90%] p-3 leading-loose text-[20px]">
-                    {event.content}
-                  </p>
-                </div>
+
+                <button className="border-4 h-[7%] sm:h-[6%] w-[100px] sm:w-[200px] border-[#6D603F] text-[16px] rounded-lg " onClick={() => navigate("/afterevent", { state: { id: index } })}>Know more</button>
               </div>
-
-	  <button className="border-4 h-[7%] sm:h-[10%] w-[100px] sm:w-[200px] border-[#6D603F] text-[16px] rounded-lg " onClick={()=>navigate("/afterevent")}>Know more</button>
-				</div>
             );
           })}
         </div>
-
-
-
       </div>
 
 	  <Subscriptions/>

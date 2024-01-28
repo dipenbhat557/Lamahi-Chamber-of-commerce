@@ -1,4 +1,3 @@
-import {FbLogo, img2, img3} from "../assets";
 import { PiYoutubeLogoDuotone } from "react-icons/pi";
 import { IoMdMail } from "react-icons/io";
 import { FaFacebook } from "react-icons/fa";

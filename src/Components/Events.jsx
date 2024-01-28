@@ -17,7 +17,9 @@ const Events = () => {
           return (
             <div
               key={index}
-              className="flex flex-col justify-around h-[500px] w-full sm:w-[28%] rounded-lg hover:bg-[#6D603F] hover:text-white"
+              className="flex flex-col justify-around h-[500px] sm:h-[650px] w-full sm:w-[28%] rounded-lg hover:bg-[#6D603F] hover:text-white"
+
+
             >
               <div className="w-full h-[50%] relative">
                 <img
@@ -42,7 +44,7 @@ const Events = () => {
         })}
       </div>
 
-      <button className="text-[18px] sm:text-[23.42px] border-4 border-[#6D603F] px-2 sm:px-5 rounded-xl py-1 w-[30%] sm:w-[14%] h-[50px] sm:h-[60px] mt-10" onClick={()=>{navigate("/events")}}>
+      <button className="text-[18px] sm:text-[23.42px] border-4 border-[#6D603F] px-2 sm:px-5 rounded-xl py-1 w-[30%] sm:w-[14%] h-[50px] sm:h-[60px] mt-10" onClick={() => { navigate("/events") }}>
         More
       </button>
     </div>

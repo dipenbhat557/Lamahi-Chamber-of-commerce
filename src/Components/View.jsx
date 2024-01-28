@@ -1,5 +1,5 @@
 import { president, viewBg } from "../assets";
-import {styles} from "../styles";
+import { styles } from "../styles";
 
 const View = () => {
   const backgroundImageStyle = {
@@ -14,10 +14,10 @@ const View = () => {
         <img
           src={president}
           alt="president"
-          className="w-[90%] sm:w-[55%] sm:h-[45%] object-contain"
+          className="w-[90%] sm:w-[55%] sm:h-[75%] object-contain"
         />
         <div className="w-[90%] sm:w-[40%] h-[45%] sm:h-[80%] flex flex-col justify-between">
-          <p className="text-[24px] sm:text-[50px] font-medium sm:tracking-wider w-full sm:w-[80%] text-start pl-4 h-[15%]">
+          <p className="text-[24px] sm:text-[40px] font-medium sm:tracking-wider w-full sm:w-[80%] text-start pl-4 h-[15%]">
             View of President
           </p>
           <p className="pl-4 text-[14px] sm:text-[22px] sm:leading-relaxed font-medium text-justify w-full sm:w-[80%] h-[50%]">
