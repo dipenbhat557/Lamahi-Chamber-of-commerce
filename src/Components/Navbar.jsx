@@ -31,7 +31,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className="sm:hidden cursor-pointer flex items-center w-[90%] mr-3 justify-end">
+      <div className="sm:hidden cursor-pointer flex items-center w-[90%] z-20 mr-3 justify-end">
         {toggle ? (
           <AiOutlineMenuUnfold
             className="text-2xl top-5 text-white absolute"

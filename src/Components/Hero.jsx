@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { heroElements } from "../constants";
 import { img1, img2, img3, logo, FbLogo } from "../assets";
@@ -70,11 +69,11 @@ const Hero = () => {
 	  <HeroHeader/>
 
           <div className="w-full h-[90%] flex justify-between">
-            <div className="h-full w-[10%] sm:w-[6%] flex flex-col items-center justify-center gap-2 bg-slate-900 bg-opacity-[40%] absolute">
+            <div className="h-full w-[10%] sm:w-[6%] flex flex-col items-center justify-center gap-2 z-1 bg-slate-900 bg-opacity-[40%] absolute">
               <p
                 className={`${
                   currentElement === 0 ? "text-white" : "text-slate-300"
-                } text-[18px] py-3`}
+                } text-[18px] py-3 cursor-pointer`}
                 onClick={() => setCurrentElement(0)}
               >
                 01
@@ -82,7 +81,7 @@ const Hero = () => {
               <p
                 className={`${
                   currentElement === 1 ? "text-white" : "text-slate-300"
-                } text-[18px] py-3`}
+                } text-[18px] py-3 cursor-pointer`}
                 onClick={() => setCurrentElement(1)}
               >
                 02
@@ -90,7 +89,7 @@ const Hero = () => {
               <p
                 className={`${
                   currentElement === 2 ? "text-white" : "text-slate-300"
-                } text-[18px] py-3`}
+                } text-[18px] py-3 cursor-pointer`}
                 onClick={() => setCurrentElement(2)}
               >
                 03
@@ -98,7 +97,7 @@ const Hero = () => {
               <p
                 className={`${
                   currentElement === 3 ? "text-white" : "text-slate-300"
-                } text-[18px] py-3`}
+                } text-[18px] py-3 cursor-pointer`}
                 onClick={() => setCurrentElement(3)}
               >
                 04
@@ -108,9 +107,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[50px] hidden sm:relative">
+      <div className="w-full h-[50px] relative">
         <div
-          className="w-full hidden flex justify-end absolute h-full bg-[#F1E8D7] z-[-1]"
+          className="w-full flex justify-end absolute h-full bg-[#F1E8D7] z-[-1]"
           style={clipPathStyle}
         ></div>
         <div
