@@ -89,51 +89,51 @@ const AfterEvent = () => {
     <div className={`${styles.padding} gap-8 flex flex-col `}>
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Event Name : </p>
-          <p>{eventElements[location.state.id]?.name} </p>
+          <p>{eventElements[location?.state?.id]?.name || " "} </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Date and Time : </p>
-          <p>{eventElements[location.state.id]?.date} and {eventElements[location.state.id]?.time} </p>
+          <p>{eventElements[location?.state?.id]?.date} and {eventElements[location.state.id]?.time || " "} </p>
         </div>
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Venue :  </p>
-          <p>{eventElements[location.state.id]?.venue} </p>
+          <p>{eventElements[location?.state?.id]?.venue || " "} </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Agenda or Schedule :  </p>
-          <p>{eventElements[location.state.id]?.agenda} </p>
+          <p>{eventElements[location?.state?.id]?.agenda || " "} </p>
         </div>
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Speakers and Presenters :  </p>
-          <p>{eventElements[location.state.id]?.speaker} </p>
+          <p>{eventElements[location?.state?.id]?.speaker || " "} </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Sponsors and Partners : </p>
-          <p>{eventElements[location.state.id]?.sponsers} </p>
+          <p>{eventElements[location?.state?.id]?.sponsers || " "} </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Contact Information :  </p>
-          <p>{eventElements[location.state.id]?.contact} </p>
+          <p>{eventElements[location?.state?.id]?.contact || " "} </p>
         </div>
 
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Food and Beverages :  </p>
-          <p>{eventElements[location.state.id]?.food} </p>
+          <p>{eventElements[location?.state?.id]?.food || " "} </p>
         </div>
 
 
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Target Audience :  </p>
-          <p>{eventElements[location.state.id]?.audience} </p>
+          <p>{eventElements[location?.state?.id]?.audience || " "} </p>
         </div>
         <div className="flex w-full items-center gap-3">
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Cancellation Policy :  </p>
-          <p>{eventElements[location.state.id]?.cancellation} </p>
+          <p>{eventElements[location?.state?.id]?.cancellation || " "} </p>
         </div>
 
       </div>
