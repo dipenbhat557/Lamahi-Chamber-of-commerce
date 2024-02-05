@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { logo } from "../assets";
 import { AiOutlineMenuUnfold, AiOutlineMenuFold } from "react-icons/ai";
@@ -71,4 +70,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

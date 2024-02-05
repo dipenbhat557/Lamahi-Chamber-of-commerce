@@ -9,11 +9,17 @@ import emailjs from "emailjs-com";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import Navbar from "./Navbar";
-import { eventElements } from "../constants";
+// import { eventElements } from "../constants";
+import useFetch from "./UseFetch";
 const AfterEvent = () => {
   const location = useLocation();
+  const eventElements = useFetch(
+    `${import.meta.env.VITE_APP_LOCAL_ROOT}/events`
+  );
 
- const formRef = useRef();
+  console.log("event elements are ", eventElements);
+
+  const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -41,7 +47,7 @@ const AfterEvent = () => {
           to_email: "bhattadipen557@gmail.com",
           message: form.message,
         },
-        "70gtdMrv58XYFp0DP",
+        "70gtdMrv58XYFp0DP"
       )
       .then(
         () => {
@@ -58,88 +64,143 @@ const AfterEvent = () => {
           setLoading(false);
           console.log(error);
           alert("Something went wrong");
-        },
+        }
       );
   };
 
-
-
-	return (
-
-	 <>
+  return (
+    <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
         <div className="absolute inset-0 z-[-2]">
-          <img src={afterEventBg} alt={`event bg`} className="object-cover w-full h-full" />
+          <img
+            src={eventElements?.[location?.state?.id]?.imageUrl || def}
+            alt={`event bg`}
+            className="object-cover w-full h-full"
+          />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 
-      <HeroHeader/> 
-       <Navbar/>
-		</div>
+        <HeroHeader />
+        <Navbar />
+      </div>
 
       <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
-        <div className="flex"><p className="text-[22px] sm:text-[35px] text-[#6D603F]">Event</p><p className="bg-[#F1E8D7] text-[12px] sm:text-[18px] rounded-lg p-2 ml-2">#upcoming</p></div>
-        <p className="text-[14px] sm:text-[20px] leading-relaxed text-center">Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in vibrant attire. Amid cheers and awards, the night celebrates talent, fostering a vibrant arts community in Lamahi.
+        <div className="flex">
+          <p className="text-[22px] sm:text-[35px] text-[#6D603F]">Event</p>
+          <p className="bg-[#F1E8D7] text-[12px] sm:text-[18px] rounded-lg p-2 ml-2">
+            {`#${
+              eventElements?.[location?.state?.id]?.["_event_stat"] ||
+              "Loading..."
+            }`}
+          </p>
+        </div>
+        <p className="text-[14px] sm:text-[20px] leading-relaxed text-center">
+          Lamahi Chamber of Commerce hosts a dazzling event, welcoming actors in
+          vibrant attire. Amid cheers and awards, the night celebrates talent,
+          fostering a vibrant arts community in Lamahi.
         </p>
       </div>
 
-		<div className="w-full text-center">
-		<button className="text-[14px] sm:text-[20px] h-[60px] w-[30%] sm:w-[15%] bg-[#6D603F] font-medium text-white rounded-lg p-1 sm:p-2">Register now</button>
-		</div>
-    <div className={`${styles.padding} gap-8 flex flex-col `}>
+      <div className="w-full text-center">
+        <button className="text-[14px] sm:text-[20px] h-[60px] w-[30%] sm:w-[15%] bg-[#6D603F] font-medium text-white rounded-lg p-1 sm:p-2">
+          Register now
+        </button>
+      </div>
+      <div className={`${styles.padding} gap-8 flex flex-col `}>
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Event Name : </p>
-          <p>{eventElements[location?.state?.id]?.name || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Event Name :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_name"] ||
+              "Loading..."}{" "}
+          </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Date and Time : </p>
-          <p>{eventElements[location?.state?.id]?.date} and {eventElements[location.state.id]?.time || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Date and Time :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_date"]} and{" "}
+            {eventElements?.[location?.state?.id]?.["_event_time"] ||
+              "Loading..."}{" "}
+          </p>
         </div>
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Venue :  </p>
-          <p>{eventElements[location?.state?.id]?.venue || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Venue :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_venue"] || " "}{" "}
+          </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Agenda or Schedule :  </p>
-          <p>{eventElements[location?.state?.id]?.agenda || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Agenda or Schedule :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_agenda"] || " "}{" "}
+          </p>
         </div>
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Speakers and Presenters :  </p>
-          <p>{eventElements[location?.state?.id]?.speaker || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Speakers and Presenters :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_speaker"] || " "}{" "}
+          </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Sponsors and Partners : </p>
-          <p>{eventElements[location?.state?.id]?.sponsers || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Sponsors and Partners :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_sponsers"] || " "}{" "}
+          </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Contact Information :  </p>
-          <p>{eventElements[location?.state?.id]?.contact || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Contact Information :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_contact"] || " "}{" "}
+          </p>
         </div>
-
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Food and Beverages :  </p>
-          <p>{eventElements[location?.state?.id]?.food || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Food and Beverages :{" "}
+          </p>
+          <p>{eventElements?.[location?.state?.id]?.["_event_food"] || " "} </p>
         </div>
-
 
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Target Audience :  </p>
-          <p>{eventElements[location?.state?.id]?.audience || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Target Audience :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_audience"] || " "}{" "}
+          </p>
         </div>
         <div className="flex w-full items-center gap-3">
-          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">Cancellation Policy :  </p>
-          <p>{eventElements[location?.state?.id]?.cancellation || " "} </p>
+          <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
+            Cancellation Policy :{" "}
+          </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_cancellation"] ||
+              " "}{" "}
+          </p>
         </div>
-
       </div>
 
-		<p className="ml-8 sm:ml-16 mt-8 sm:mt-16 font-medium text-[18px] sm:text-[25px] tracking-wider text-[#6D603F]">Advice</p>
-    <div
+      <p className="ml-8 sm:ml-16 mt-8 sm:mt-16 font-medium text-[18px] sm:text-[25px] tracking-wider text-[#6D603F]">
+        Advice
+      </p>
+      <div
         className={`${styles.padding} flex flex-col sm:flex-row jusitfy-around sm:justify-between items-start w-full h-auto`}
       >
         <div className=" flex w-[90%] sm:w-[50%] h-auto ml-0">
@@ -212,11 +273,8 @@ const AfterEvent = () => {
       </div>
 
       <Footer />
-
     </>
-
-  )
-
-}
+  );
+};
 
 export default AfterEvent;
