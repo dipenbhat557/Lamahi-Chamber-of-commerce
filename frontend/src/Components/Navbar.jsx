@@ -9,8 +9,8 @@ const Navbar = () => {
     <>
       {/* Desktop menu */}
       <div
-        style={{ marginTop: "45px" }}
-        className="h-full w-[70%] top-10 ml-80 items-start text-white font-semibold text-[25px] hidden sm:flex sm:justify-evenly gap-6 relative"
+        style={{ marginTop: "40px" }}
+        className="h-full w-[70%] top-8 ml-80 items-start text-white text-[21px] hidden sm:flex sm:justify-evenly gap-6 relative"
       >
         <div className=" h-[13%] flex items-center justify-around">
           <a href="/events">Events</a>
