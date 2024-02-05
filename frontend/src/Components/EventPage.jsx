@@ -63,6 +63,7 @@ const EventPage = () => {
               >
                 <div className="flex flex-col justify-around h-[90%] w-full rounded-lg hover:bg-[#6D603F] hover:text-white">
                   <div className="w-full h-[50%] relative">
+                    {console.log("events are ", event)}
                     <img
                       src={event?.imageUrl || def}
                       alt={`img-${index}`}

@@ -18,7 +18,7 @@ function Pages() {
         <Route path="/committee" element={<Committee />} />
 
         <Route path="/afterevent" element={<AfterEvent />} />
-        <Route path="afterpress" element={<AfterPressRelease />} />
+        <Route path="/afterpress" element={<AfterPressRelease />} />
       </Routes>
     </BrowserRouter>
   );

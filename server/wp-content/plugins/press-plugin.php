@@ -15,11 +15,11 @@ Author URI: https://lamahichamberofcommerce.org.np
 
 function generate_press_type() {
     $labels = array(
-        'name'                  => 'Press Releases',
-        'singular_name'         => 'Press Release',
+        'name'                  => 'Press-Releases',
+        'singular_name'         => 'Press-Release',
     );
     $args = array(
-        'label'                 => 'Press Release',
+        'label'                 => 'Press-Release',
         'labels'                => $labels,
         'supports'              => array('title', 'editor', 'custom-fields'),
         'taxonomies'            => array('category', 'post_tag'),
