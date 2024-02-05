@@ -97,8 +97,8 @@ function render_press_details_meta_box($post) {
             });
         });
     </script>
-    <label for="press_content">Press Release Content:</label>
-    <textarea name="press_content" id="press_content" class="widefat" rows="5"><?php echo esc_textarea($press_content); ?></textarea>
+    <!-- <label for="press_content">Press Release Content:</label>
+    <textarea name="press_content" id="press_content" class="widefat" rows="5"><?php echo esc_textarea($press_content); ?></textarea> -->
     <?php
 }
 
@@ -122,29 +122,29 @@ function save_press_details_meta($post_id) {
     }
 }
 
-// Ensure custom fields are exposed in REST API
-function expose_custom_fields_in_rest() {
-    register_rest_field('press_type', '_press_img', array(
-        'get_callback'    => 'get_custom_field',
-        'update_callback' => 'update_custom_field',
-        'schema'          => null,
-    ));
+// // Ensure custom fields are exposed in REST API
+// function expose_custom_fields_in_rest() {
+//     register_rest_field('press_type', '_press_img', array(
+//         'get_callback'    => 'get_custom_field',
+//         'update_callback' => 'update_custom_field',
+//         'schema'          => null,
+//     ));
 
-    register_rest_field('press_type', '_press_content', array(
-        'get_callback'    => 'get_custom_field',
-        'update_callback' => 'update_custom_field',
-        'schema'          => null,
-    ));
-}
+//     register_rest_field('press_type', '_press_content', array(
+//         'get_callback'    => 'get_custom_field',
+//         'update_callback' => 'update_custom_field',
+//         'schema'          => null,
+//     ));
+// }
 
-function get_custom_field($object, $field_name, $request) {
-    return get_post_meta($object['id'], $field_name, true);
-}
+// function get_custom_field($object, $field_name, $request) {
+//     return get_post_meta($object['id'], $field_name, true);
+// }
 
-function update_custom_field($value, $object, $field_name) {
-    return update_post_meta($object->ID, $field_name, $value);
-}
+// function update_custom_field($value, $object, $field_name) {
+//     return update_post_meta($object->ID, $field_name, $value);
+// }
 
-add_action('init', 'expose_custom_fields_in_rest');
+// add_action('init', 'expose_custom_fields_in_rest');
 add_action('save_post', 'save_press_details_meta');
-add_action('rest_api_init', 'expose_custom_fields_in_rest');
+// add_action('rest_api_init', 'expose_custom_fields_in_rest');

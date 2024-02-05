@@ -20,7 +20,7 @@ import Subscriptions from "./Subscriptions";
 const AboutUs = () => {
   return (
     <>
-      <div className="relative w-full h-[500px] sm:h-[880px]">
+      <div className="relative w-full h-[500px] sm:h-[880px] top-0">
         <div className="absolute inset-0 z-[-2]">
           <img
             src={aboutBg}

@@ -11,10 +11,10 @@ const Press = () => {
   const navigate = useNavigate();
 
   const pressElements = useFetch(
-    `${import.meta.env.VITE_APP_LOCAL_ROOT}/press-releases`
+    `${import.meta.env.VITE_APP_API_ROOT}/press-releases`
   );
 
-  console.log("press elements are ", pressElements);
+  // console.log("press elements are ", pressElements);
 
   // Function to update the current events based on the currentIndex
   const updateCurrentEvents = () => {
@@ -67,16 +67,19 @@ const Press = () => {
             key={currentIndex}
             className=" w-[90%] h-full relative"
             style={{
-              backgroundImage: `url(${pressElements?.[currentIndex]?.["_press_img"]})`,
+              backgroundImage: `url(${pressElements?.[currentIndex]?.imageUrl})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div className="text-container absolute z-1 text-white w-full h-full flex flex-col justify-end items-end gap-3 p-6">
-              <p className="text-[14px] w-[80%] font-medium">
-                {pressElements?.[currentIndex]?.content}
-              </p>
+              <p
+                className="text-[14px] w-[80%] font-medium"
+                dangerouslySetInnerHTML={
+                  pressElements?.[currentIndex]?.content?.rendered
+                }
+              ></p>
               <button
                 className="bg-[#6D603F] text-[14px] rounded-lg w-[80%] h-[30px]"
                 onClick={() =>
@@ -106,16 +109,17 @@ const Press = () => {
               key={index}
               className="sm:w-[35%] w-[40%] h-full relative"
               style={{
-                backgroundImage: `url(${ele?.["_press_img"]})`,
+                backgroundImage: `url(${ele?.imageUrl})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
             >
               <div className="absolute inset-0 bg-black bg-opacity-40" />
               <div className="text-container absolute z-1 text-white w-full h-full flex flex-col justify-end items-end gap-3 p-6">
-                <p className="text-[14px] sm:text-[25px] w-[70%] font-medium">
-                  {ele?.["_press_content"]}
-                </p>
+                <p
+                  className="text-[14px] sm:text-[25px] w-[70%] font-medium"
+                  dangerouslySetInnerHTML={ele?.content?.rendered}
+                ></p>
                 <button
                   className="bg-[#6D603F] text-[14px] sm:text-[20px] rounded-lg w-[35%] h-[50px]"
                   onClick={() =>

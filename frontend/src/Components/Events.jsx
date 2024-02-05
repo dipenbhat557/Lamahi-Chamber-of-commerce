@@ -8,9 +8,9 @@ import { useEffect, useState } from "react";
 const Events = () => {
   const navigate = useNavigate();
 
-  const eventsItems = useFetch(`${import.meta.env.VITE_APP_LOCAL_ROOT}/events`);
+  const eventsItems = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
 
-  console.log("event elements are ", eventsItems);
+  // console.log("event elements are ", eventsItems);
 
   const [currentEvents, setCurrentEvents] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,7 +26,7 @@ const Events = () => {
           ?.slice(startIndex, endIndex)
           .concat(eventsItems?.slice(0, nextIndex))
       );
-      console.log("Current events : ", currentEvents);
+      // console.log("Current events : ", currentEvents);
     } else {
       setCurrentEvents(eventsItems?.slice(startIndex, endIndex));
     }

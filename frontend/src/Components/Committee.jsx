@@ -9,10 +9,10 @@ import useFetch from "./UseFetch";
 
 const Committee = () => {
   const commiteeImages = useFetch(
-    `${import.meta.env.VITE_APP_LOCAL_ROOT}/committees`
+    `${import.meta.env.VITE_APP_API_ROOT}/committees`
   );
 
-  console.log("committee images are ", commiteeImages);
+  // console.log("committee images are ", commiteeImages);
 
   return (
     <>

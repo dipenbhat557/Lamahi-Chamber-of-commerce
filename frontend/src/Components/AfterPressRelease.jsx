@@ -13,10 +13,10 @@ import { def } from "../assets";
 const AfterPressRelease = () => {
   const location = useLocation();
   const pressElements = useFetch(
-    `${import.meta.env.VITE_APP_LOCAL_ROOT}/press-releases`
+    `${import.meta.env.VITE_APP_API_ROOT}/press-releases`
   );
 
-  console.log("press elements are ", pressElements);
+  // console.log("press elements are ", pressElements);
 
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -116,7 +116,7 @@ const AfterPressRelease = () => {
           <p
             dangerouslySetInnerHTML={{
               __html:
-                pressElements?.[location?.state?.id]?.["_press_content"] ||
+                pressElements?.[location?.state?.id]?.content?.rendered ||
                 "Loading...",
             }}
           />

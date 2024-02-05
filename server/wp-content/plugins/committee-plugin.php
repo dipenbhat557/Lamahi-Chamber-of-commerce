@@ -118,23 +118,23 @@ function save_committee_details_meta($post_id) {
     }
 }
 
-// Ensure custom field is exposed in REST API
-function expose_custom_field_in_rest() {
-    register_rest_field('committee_type', '_committee_img', array(
-        'get_callback'    => 'get_custom_field',
-        'update_callback' => 'update_custom_field',
-        'schema'          => null,
-    ));
-}
+// // Ensure custom field is exposed in REST API
+// function expose_custom_field_in_rest() {
+//     register_rest_field('committee_type', '_committee_img', array(
+//         'get_callback'    => 'get_custom_field',
+//         'update_callback' => 'update_custom_field',
+//         'schema'          => null,
+//     ));
+// }
 
-function get_custom_field($object, $field_name, $request) {
-    return get_post_meta($object['id'], $field_name, true);
-}
+// function get_custom_field($object, $field_name, $request) {
+//     return get_post_meta($object['id'], $field_name, true);
+// }
 
-function update_custom_field($value, $object, $field_name) {
-    return update_post_meta($object->ID, $field_name, $value);
-}
+// function update_custom_field($value, $object, $field_name) {
+//     return update_post_meta($object->ID, $field_name, $value);
+// }
 
-add_action('init', 'expose_custom_field_in_rest');
+// add_action('init', 'expose_custom_field_in_rest');
 add_action('save_post', 'save_committee_details_meta');
-add_action('rest_api_init', 'expose_custom_field_in_rest');
+// add_action('rest_api_init', 'expose_custom_field_in_rest');

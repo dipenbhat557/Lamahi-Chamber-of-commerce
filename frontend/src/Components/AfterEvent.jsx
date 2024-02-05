@@ -13,11 +13,9 @@ import Navbar from "./Navbar";
 import useFetch from "./UseFetch";
 const AfterEvent = () => {
   const location = useLocation();
-  const eventElements = useFetch(
-    `${import.meta.env.VITE_APP_LOCAL_ROOT}/events`
-  );
+  const eventElements = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
 
-  console.log("event elements are ", eventElements);
+  // console.log("event elements are ", eventElements);
 
   const formRef = useRef();
   const [form, setForm] = useState({
