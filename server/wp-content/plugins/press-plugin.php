@@ -8,7 +8,7 @@
 Plugin Name: Press plugin
 Plugin URI: https://lamahichamberofcommerce.org.np
 Description: Plugin for managing press releases on Lamahi Chamber of Commerce website
-Author: Your Name
+Author: Dipendra Bhatta
 Version: 1.0.0
 Author URI: https://lamahichamberofcommerce.org.np
 */
