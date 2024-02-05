@@ -33,7 +33,7 @@ const EventPage = () => {
 
       <div className={`${styles.padding} w-full h-auto flex flex-col gap-4`}>
         <p className="text-[35px] text-[#6D603F]">Events</p>
-        <p className="text-[14px] sm:text-[20px] leading-relaxed text-justify">
+        <p className="text-[12px] sm:text-[18px] leading-relaxed text-justify ">
           Join us for an exciting and informative event hosted by the Lamahi
           Chamber of Commerce! We are thrilled to bring together local
           businesses, entrepreneurs, and community members to foster

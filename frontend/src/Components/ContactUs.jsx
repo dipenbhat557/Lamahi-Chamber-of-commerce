@@ -1,5 +1,5 @@
 import {Suspense, useRef, useState} from "react";
-import {FbLogo, aboutBg, facebook, img2, img3, instagram, logo, twitter} from "../assets";
+import {FbLogo, aboutBg, contactUsBg, facebook, img2, img3, instagram, logo, twitter} from "../assets";
 import emailjs from "emailjs-com";
 import Loading from "./Loading";
 import {slideIn} from "../utils/motion";
@@ -64,7 +64,7 @@ const ContactUs = () => {
 	return (	 <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
         <div className="absolute inset-0 z-[-2]">
-          <img src={aboutBg} alt={`about bg`} className="object-cover w-full h-full" />
+          <img src={contactUsBg} alt={`about bg`} className="object-cover w-full h-full" />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 

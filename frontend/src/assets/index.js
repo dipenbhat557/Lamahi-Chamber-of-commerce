@@ -11,11 +11,11 @@ import press2 from "./pressImages/press2.png";
 import eventBg from "./eventBg.png";
 import aboutBg from "./aboutBg.png";
 import about1 from "./aboutImages/about1.png";
-
+import contactUsBg from "./contactusBg.png";
 import about2 from "./aboutImages/about2.png";
 import about3 from "./aboutImages/about3.png";
 import suitcase from "./aboutImages/suitcase.png";
-
+import committee from "./committee.png";
 import facebook from "./socialMedias/facebook.png";
 import instagram from "./socialMedias/insta.png";
 import twitter from "./socialMedias/twitter.png";
@@ -45,5 +45,7 @@ export {
   instagram,
   twitter,
   afterEventBg,
+  contactUsBg,
   def,
+  committee,
 };

@@ -18,11 +18,7 @@ const Committee = () => {
     <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
         <div className="absolute inset-0 z-[-2]">
-          <img
-            src={aboutBg}
-            alt={`about bg`}
-            className="object-cover w-full h-full"
-          />
+          <img src={committee} alt={`about bg`} className="object-cover w-full h-full" />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 

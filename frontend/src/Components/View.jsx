@@ -20,7 +20,7 @@ const View = () => {
           <p className="text-[24px] sm:text-[40px] font-medium sm:tracking-wider w-full sm:w-[80%] text-start pl-4 h-[15%]">
             View of President
           </p>
-          <p className="pl-4 text-[14px] sm:text-[22px] sm:leading-relaxed font-medium text-justify w-full sm:w-[80%] h-[50%]">
+          <p className="pl-4 text-[14px] sm:text-[22px] sm:leading-relaxed  text-justify w-full sm:w-[80%] h-[50%] text-slate-600">
             As President of Lamahi Chamber of Commerce, I extend my heartfelt
             gratitude to all contributors. Together, we build a thriving
             community. Your dedication propels Lamahi towards prosperity and
