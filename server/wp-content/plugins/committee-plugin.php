@@ -21,7 +21,7 @@ function generate_committee_type() {
     $args = array(
         'label'                 => 'Committee',
         'labels'                => $labels,
-        'supports'              => array('title', 'custom-fields'),
+        'supports'              => array('title', 'editor', 'custom-fields'),
         'taxonomies'            => array('category', 'post_tag'),
         'hierarchical'          => false,
         'public'                => true,
