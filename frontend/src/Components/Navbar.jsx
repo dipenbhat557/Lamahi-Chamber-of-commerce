@@ -8,11 +8,8 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop menu */}
-      <div
-        style={{ marginTop: "40px" }}
-        className="h-full w-[70%] top-8 ml-80 items-start text-white text-[21px] hidden sm:flex sm:justify-evenly gap-6 relative"
-      >
-        <div className=" h-[13%] flex items-center justify-around">
+      <div className="h-[150px] w-[70%] top-8 ml-80 items-start text-white text-[21px] hidden sm:flex sm:justify-evenly gap-6 relative">
+        <div className=" h-full flex items-center justify-around">
           <a href="/events">Events</a>
           <a href="/committee">Committee</a>
           <div className="w-[9%] h-[12%] flex items-center justify-center">

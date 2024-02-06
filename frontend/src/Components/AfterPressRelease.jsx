@@ -13,7 +13,7 @@ import { def } from "../assets";
 const AfterPressRelease = () => {
   const location = useLocation();
   const pressElements = useFetch(
-    `${import.meta.env.VITE_APP_API_ROOT}/press-releases`
+    `${import.meta.env.VITE_APP_API_ROOT}/press-releases?per_page=20`
   );
 
   // console.log("press elements are ", pressElements);

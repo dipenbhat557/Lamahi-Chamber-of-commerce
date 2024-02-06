@@ -1,4 +1,4 @@
-import { FbLogo, aboutBg, img2, img3, logo } from "../assets";
+import { FbLogo, aboutBg, committee, img2, img3, logo } from "../assets";
 // import { commiteeImages } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
@@ -8,9 +8,11 @@ import Subscriptions from "./Subscriptions";
 import useFetch from "./UseFetch";
 
 const Committee = () => {
-  const commiteeImages = useFetch(
-    `${import.meta.env.VITE_APP_API_ROOT}/committees`
+  const oldCommiteeImages = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/committees?per_page=50`
   );
+
+  const commiteeImages = oldCommiteeImages?.slice()?.reverse();
 
   // console.log("committee images are ", commiteeImages);
 
@@ -18,7 +20,11 @@ const Committee = () => {
     <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
         <div className="absolute inset-0 z-[-2]">
-          <img src={committee} alt={`about bg`} className="object-cover w-full h-full" />
+          <img
+            src={committee}
+            alt={`about bg`}
+            className="object-cover w-full h-full"
+          />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 

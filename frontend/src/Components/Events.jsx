@@ -8,7 +8,9 @@ import { useEffect, useState } from "react";
 const Events = () => {
   const navigate = useNavigate();
 
-  const eventsItems = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
+  const eventsItems = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/events?per_page=20`
+  );
 
   // console.log("event elements are ", eventsItems);
 

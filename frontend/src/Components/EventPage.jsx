@@ -11,7 +11,9 @@ import useFetch from "./UseFetch";
 const EventPage = () => {
   const navigate = useNavigate();
 
-  const eventElements = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
+  const eventElements = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/events?per_page=20`
+  );
 
   // console.log("event elements are ", eventElements);
 

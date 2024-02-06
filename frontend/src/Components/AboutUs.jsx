@@ -66,7 +66,7 @@ const AboutUs = () => {
         {[about1, about2, about3].map((image, index) => (
           <div
             key={index}
-            className={`w-full sm:w-[20%] mx-auto rounded-2xl h-[60%] flex flex-col justify-center z-2 items-center p-3 border-8 border-[#6D603F] mt-2 sm:${
+            className={`w-full sm:w-[25%] mx-auto rounded-2xl h-[60%] flex flex-col justify-center z-2 items-center p-3 border-8 border-[#6D603F] mt-2 sm:${
               index === 1 ? "mt-4 sm:mt-0" : ""
             }`}
           >

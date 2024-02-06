@@ -1,5 +1,5 @@
 import { Suspense, useRef, useState } from "react";
-import { FbLogo, afterEventBg, img2, img3, logo } from "../assets";
+import { FbLogo, afterEventBg, def, img2, img3, logo } from "../assets";
 import { styles } from "../styles";
 import Loading from "./Loading";
 import { motion } from "framer-motion";
@@ -13,7 +13,9 @@ import Navbar from "./Navbar";
 import useFetch from "./UseFetch";
 const AfterEvent = () => {
   const location = useLocation();
-  const eventElements = useFetch(`${import.meta.env.VITE_APP_API_ROOT}/events`);
+  const eventElements = useFetch(
+    `${import.meta.env.VITE_APP_API_ROOT}/events?per_page=20`
+  );
 
   // console.log("event elements are ", eventElements);
 
@@ -110,8 +112,7 @@ const AfterEvent = () => {
             Event Name :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_name"] ||
-              "Loading..."}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_name"] || "NA"}{" "}
           </p>
         </div>
 
@@ -121,8 +122,7 @@ const AfterEvent = () => {
           </p>
           <p>
             {eventElements?.[location?.state?.id]?.["_event_date"]} and{" "}
-            {eventElements?.[location?.state?.id]?.["_event_time"] ||
-              "Loading..."}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_time"] || "NA"}{" "}
           </p>
         </div>
         <div className="flex w-full items-center gap-3">
@@ -130,7 +130,7 @@ const AfterEvent = () => {
             Venue :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_venue"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_venue"] || "NA"}{" "}
           </p>
         </div>
 
@@ -139,7 +139,7 @@ const AfterEvent = () => {
             Agenda or Schedule :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_agenda"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_agenda"] || "NA"}{" "}
           </p>
         </div>
         <div className="flex w-full items-center gap-3">
@@ -147,7 +147,7 @@ const AfterEvent = () => {
             Speakers and Presenters :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_speaker"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_speaker"] || "NA"}{" "}
           </p>
         </div>
 
@@ -156,7 +156,7 @@ const AfterEvent = () => {
             Sponsors and Partners :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_sponsers"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_sponsers"] || "NA"}{" "}
           </p>
         </div>
 
@@ -165,7 +165,7 @@ const AfterEvent = () => {
             Contact Information :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_contact"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_contact"] || "NA"}{" "}
           </p>
         </div>
 
@@ -173,7 +173,9 @@ const AfterEvent = () => {
           <p className="text-[14px] sm:text-[18px] font-medium text-[#6D603F]">
             Food and Beverages :{" "}
           </p>
-          <p>{eventElements?.[location?.state?.id]?.["_event_food"] || " "} </p>
+          <p>
+            {eventElements?.[location?.state?.id]?.["_event_food"] || "NA"}{" "}
+          </p>
         </div>
 
         <div className="flex w-full items-center gap-3">
@@ -181,7 +183,7 @@ const AfterEvent = () => {
             Target Audience :{" "}
           </p>
           <p>
-            {eventElements?.[location?.state?.id]?.["_event_audience"] || " "}{" "}
+            {eventElements?.[location?.state?.id]?.["_event_audience"] || "NA"}{" "}
           </p>
         </div>
         <div className="flex w-full items-center gap-3">
@@ -190,7 +192,7 @@ const AfterEvent = () => {
           </p>
           <p>
             {eventElements?.[location?.state?.id]?.["_event_cancellation"] ||
-              " "}{" "}
+              "NA"}{" "}
           </p>
         </div>
       </div>
