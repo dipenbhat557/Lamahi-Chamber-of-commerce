@@ -16,7 +16,7 @@ const HeroHeader = () => {
   };
 
   return (
-    <div className="w-full h-[7%] sm:h-[10%] flex items-center justify-start gap-1 absolute z-10 mt-2 ml-10">
+    <div className="w-[80%] h-[7%] sm:h-[10%] flex items-center justify-start gap-1 absolute z-10 mt-2 ml-10">
       <a href="https://m.facebook.com/profile.php?id=1262596397101048">
         <FaFacebook
           size={40}

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-// import { pressElements } from "../constants";
-import { styles } from "../styles";
 import { MdArrowRight, MdArrowLeft } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import useFetch from "./UseFetch";
+import { styles } from "../styles";
+import { def } from "../assets";
 
 const Press = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
@@ -14,14 +14,15 @@ const Press = () => {
     `${import.meta.env.VITE_APP_API_ROOT}/press-releases?per_page=20`
   );
 
-  // console.log("press elements are ", pressElements);
-
-  // Function to update the current events based on the currentIndex
   const updateCurrentEvents = () => {
-    const startIndex = currentIndex;
-    const endIndex = startIndex + (window.innerWidth < 640 ? 1 : 2);
-    const nextIndex = endIndex % pressElements?.length;
-    if (endIndex !== pressElements?.length - 1) {
+    let startIndex = currentIndex;
+    let endIndex = startIndex + (window.innerWidth < 640 ? 1 : 2);
+    let nextIndex =
+      endIndex % pressElements?.length == undefined
+        ? endIndex
+        : endIndex % pressElements?.length;
+    // console.log("next index is ", nextIndex, " and end is ", endIndex);
+    if (endIndex > pressElements?.length - 1) {
       setCurrentEvents(
         pressElements
           ?.slice(startIndex, endIndex)
@@ -32,21 +33,54 @@ const Press = () => {
     }
   };
 
-  // Function to handle automatic switching of events
   const handleAutoSwitch = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % pressElements?.length);
+    setCurrentIndex(
+      (prevIndex) =>
+        (prevIndex + 1) % pressElements?.length || (prevIndex + 1) % 3
+    );
   };
 
   useEffect(() => {
-    // Initialize current events
     updateCurrentEvents();
-
-    // Set up automatic switching every 5 seconds (adjust as needed)
+    // console.log("current index is ", currentIndex);
+    // console.log(currentEvents);
     const interval = setInterval(handleAutoSwitch, 3000);
-
-    // Clear the interval when the component unmounts
     return () => clearInterval(interval);
   }, [currentIndex]);
+
+  const renderPressElement = (element, index) => (
+    <div
+      key={index}
+      className={`w-full h-full relative ${
+        window.innerWidth < 640 ? "sm:w-[90%]" : "sm:w-[35%] w-[40%]"
+      } `}
+      style={{
+        backgroundImage: `url(${element?.imageUrl || def} )`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black bg-opacity-40" />
+      <div className="text-container absolute z-1 text-white w-full h-full flex flex-col justify-end items-end gap-3 p-6">
+        <p
+          className={`text-[14px] ${
+            window.innerWidth >= 640 ? "sm:text-[25px]" : ""
+          } w-[70%] font-medium`}
+          dangerouslySetInnerHTML={{ __html: element?.content?.rendered }}
+        ></p>
+        <button
+          className={`bg-[#6D603F] text-[14px] ${
+            window.innerWidth >= 640 ? "sm:text-[20px]" : ""
+          } rounded-lg ${
+            window.innerWidth < 640 ? "w-[80%] h-[30px]" : "w-[35%] h-[50px]"
+          }`}
+          onClick={() => navigate("/afterpress", { state: { id: index } })}
+        >
+          Read more
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div
@@ -56,88 +90,27 @@ const Press = () => {
         Press Release
       </p>
 
-      {window.innerWidth < 640 ? (
-        <div className="w-full h-[300px] flex gap-4 sm:gap-24 items-center justify-center">
-          <MdArrowLeft
-            size={50}
-            onClick={handleAutoSwitch}
-            className="cursor-pointer"
-          />
-          <div
-            key={currentIndex}
-            className=" w-[90%] h-full relative"
-            style={{
-              backgroundImage: `url(${pressElements?.[currentIndex]?.imageUrl})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-40" />
-            <div className="text-container absolute z-1 text-white w-full h-full flex flex-col justify-end items-end gap-3 p-6">
-              <p
-                className="text-[14px] w-[80%] font-medium"
-                dangerouslySetInnerHTML={
-                  pressElements?.[currentIndex]?.content?.rendered
-                }
-              ></p>
-              <button
-                className="bg-[#6D603F] text-[14px] rounded-lg w-[80%] h-[30px]"
-                onClick={() =>
-                  navigate("/afterpress", { state: { id: currentIndex } })
-                }
-              >
-                Read more
-              </button>
-            </div>
-          </div>
-          <MdArrowRight
-            size={50}
-            onClick={handleAutoSwitch}
-            className="cursor-pointer"
-          />
-        </div>
-      ) : (
-        <div className="w-full h-[400px] flex gap-4 sm:gap-24 items-center justify-center">
-          <MdArrowLeft
-            size={100}
-            onClick={handleAutoSwitch}
-            className="cursor-pointer"
-          />
+      <div
+        className={`w-full ${
+          window.innerWidth < 640 ? "h-[300px]" : "h-[400px]"
+        } flex gap-4 sm:gap-24 items-center justify-center`}
+      >
+        <MdArrowLeft
+          size={window.innerWidth < 640 ? 50 : 100}
+          onClick={handleAutoSwitch}
+          className="cursor-pointer"
+        />
 
-          {currentEvents?.map((ele, index) => (
-            <div
-              key={index}
-              className="sm:w-[35%] w-[40%] h-full relative"
-              style={{
-                backgroundImage: `url(${ele?.imageUrl})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-40" />
-              <div className="text-container absolute z-1 text-white w-full h-full flex flex-col justify-end items-end gap-3 p-6">
-                <p
-                  className="text-[14px] sm:text-[25px] w-[70%] font-medium"
-                  dangerouslySetInnerHTML={ele?.content?.rendered}
-                ></p>
-                <button
-                  className="bg-[#6D603F] text-[14px] sm:text-[20px] rounded-lg w-[35%] h-[50px]"
-                  onClick={() =>
-                    navigate("/afterpress", { state: { id: index } })
-                  }
-                >
-                  Read more
-                </button>
-              </div>
-            </div>
-          ))}
-          <MdArrowRight
-            size={100}
-            onClick={handleAutoSwitch}
-            className="cursor-pointer"
-          />
-        </div>
-      )}
+        {window.innerWidth < 640
+          ? renderPressElement(pressElements?.[currentIndex], currentIndex)
+          : currentEvents?.map((ele, index) => renderPressElement(ele, index))}
+
+        <MdArrowRight
+          size={window.innerWidth < 640 ? 50 : 100}
+          onClick={handleAutoSwitch}
+          className="cursor-pointer"
+        />
+      </div>
     </div>
   );
 };

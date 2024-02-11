@@ -77,7 +77,7 @@ const EventPage = () => {
                     <p className="w-full h-[10%] pr-3 text-end mt-2">
                       {event?.["_event_date"] || "Loading..."}
                     </p>
-                    <p className="w-full h-[90%] p-3 leading-loose text-[18px]">
+                    <p className="w-full h-[90%] p-3 leading-loose text-[18px] line-clamp-5">
                       {event?.["_event_content"] || "Loading..."}
                     </p>
                   </div>

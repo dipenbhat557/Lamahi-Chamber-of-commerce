@@ -45,7 +45,7 @@ const Footer = () => {
             Lamahi-5, Dang, Nepal
           </p>
           <p className="text-[14px] sm:text-[16px] text-slate-500">
-            +977 98765789, 098769 , 098790
+            +977 9857840336
           </p>
           <p
             onClick={openGmailCompose}

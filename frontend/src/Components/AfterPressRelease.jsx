@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import Navbar from "./Navbar";
 import { def } from "../assets";
+import useFetch from "./UseFetch";
 
 const AfterPressRelease = () => {
   const location = useLocation();
@@ -76,6 +77,8 @@ const AfterPressRelease = () => {
             alt={`press bg`}
             className="object-cover w-full h-full"
           />
+          {/* {console.log(pressElements?.[location?.state?.id]?.imageUrl)}
+          {console.log(location?.state?.id)} */}
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 

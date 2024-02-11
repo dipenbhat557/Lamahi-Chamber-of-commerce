@@ -35,7 +35,7 @@ const Contact = () => {
           to_email: "bhattadipen557@gmail.com",
           message: form.message,
         },
-        "70gtdMrv58XYFp0DP",
+        "70gtdMrv58XYFp0DP"
       )
       .then(
         () => {
@@ -52,7 +52,7 @@ const Contact = () => {
           setLoading(false);
           console.log(error);
           alert("Something went wrong");
-        },
+        }
       );
   };
 
@@ -60,7 +60,7 @@ const Contact = () => {
     <div
       className={`${styles.padding} flex flex-col sm:flex-row justify-between items-start w-full h-auto`}
     >
-      <div className=" flex w-[80%] sm:w-[50%] h-auto ml-0">
+      <div className=" flex items-center justify-center sm:justify-normal  w-[80%] sm:w-[50%] h-auto ml-0">
         {/* Contact form section */}
         <Suspense fallback={<Loading />}>
           <motion.div

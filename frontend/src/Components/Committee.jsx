@@ -1,4 +1,4 @@
-import { FbLogo, aboutBg, committee, img2, img3, logo } from "../assets";
+import { FbLogo, aboutBg, committee, def, img2, img3, logo } from "../assets";
 // import { commiteeImages } from "../constants";
 import { styles } from "../styles";
 import Footer from "./Footer";
@@ -57,10 +57,10 @@ const Committee = () => {
       >
         {commiteeImages?.map((ele, index) => (
           <img
-            src={ele?.imageUrl}
+            src={ele?.imageUrl || def}
             alt={`img-${index}`}
             key={index}
-            className="w-full sm:w-[25%] h-[400px] sm:h-[500px] object-cover"
+            className="w-full sm:w-[25%] h-[400px] sm:h-[500px] object-cover  bg-slate-200"
           />
         ))}
       </div>

@@ -1,16 +1,37 @@
-import {Suspense, useRef, useState} from "react";
-import {FbLogo, aboutBg, contactUsBg, facebook, img2, img3, instagram, logo, twitter} from "../assets";
+import { Suspense, useRef, useState } from "react";
+import {
+  FbLogo,
+  aboutBg,
+  contactUsBg,
+  facebook,
+  img2,
+  img3,
+  instagram,
+  logo,
+  twitter,
+} from "../assets";
 import emailjs from "emailjs-com";
 import Loading from "./Loading";
-import {slideIn} from "../utils/motion";
-import {motion} from "framer-motion"
+import { slideIn } from "../utils/motion";
+import { motion } from "framer-motion";
 import Footer from "./Footer";
 import HeroHeader from "./HeroHeader";
 import Navbar from "./Navbar";
 
 const ContactUs = () => {
+  const [scrolled, setScrolled] = useState(false);
 
- const [scrolled, setScrolled] = useState(false);
+  const openGmailCompose = () => {
+    const email = "lamahicoc557@gmail.com";
+    const subject = "Subject of the email";
+    const body = "Body of the email";
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  };
 
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -61,19 +82,22 @@ const ContactUs = () => {
       );
   };
 
-	return (	 <>
+  return (
+    <>
       <div className="relative w-full h-[500px] sm:h-[880px]">
         <div className="absolute inset-0 z-[-2]">
-          <img src={contactUsBg} alt={`about bg`} className="object-cover w-full h-full" />
+          <img
+            src={contactUsBg}
+            alt={`about bg`}
+            className="object-cover w-full h-full"
+          />
           <div className="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
 
-      <HeroHeader/> 
+        <HeroHeader />
 
-       
-<Navbar/>
+        <Navbar />
       </div>
-
 
       <div className="flex flex-col sm:flex-row justify-between items-start w-[90%] mx-auto sm:w-full h-auto sm:mx-8  sm:pl-24">
         <div className=" flex w-full sm:w-[50%] h-auto ml-0  sm:ml-10">
@@ -139,13 +163,14 @@ const ContactUs = () => {
           <div className="h-auto w-[80% ] sm:w-[35%] flex flex-col my-4 ">
             <p className="text-[18px] p-3">Lamahi Chamber of Commerce</p>
             <p className="text-[16px] text-slate-600 p-2">
-              Lamahi-6, Dang, Nepal
+              Lamahi-5, Dang, Nepal
             </p>
-            <p className="text-[16px] text-slate-600 p-2">
-              +977 98765789, 098769 , 098790
-            </p>
-            <p className="text-[16px] text-slate-600 p-2">
-              lamahichamberofcommerce@gmail.com
+            <p className="text-[16px] text-slate-600 p-2">+977 9857840336</p>
+            <p
+              className="text-[16px] text-slate-600 p-2 cursor-pointer"
+              onClick={openGmailCompose}
+            >
+              lamahicoc557@gmail.com
             </p>
             <div className="flex items-start gap-5 justify-start m-4">
               <img
@@ -174,14 +199,11 @@ const ContactUs = () => {
         id="location"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-       
         className="w-full h-[350px]  mt-4"
-
       ></iframe>
-<Footer/>
-</>
-	)
-
-}
+      <Footer />
+    </>
+  );
+};
 
 export default ContactUs;

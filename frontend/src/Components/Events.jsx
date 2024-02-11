@@ -21,8 +21,22 @@ const Events = () => {
   const updateCurrentEvents = () => {
     const startIndex = currentIndex;
     const endIndex = startIndex + 3;
-    const nextIndex = endIndex % eventsItems?.length;
-    if (endIndex !== eventsItems?.length - 1) {
+    let nextIndex =
+      endIndex % eventsItems?.length == undefined
+        ? endIndex
+        : endIndex % eventsItems?.length;
+
+    // console.log(
+    //   "curent index is ",
+    //   currentIndex,
+    //   " start index is ",
+    //   startIndex,
+    //   " end index is ",
+    //   endIndex,
+    //   " nexrt index is ",
+    //   nextIndex
+    // );
+    if (endIndex > eventsItems?.length - 1) {
       setCurrentEvents(
         eventsItems
           ?.slice(startIndex, endIndex)
@@ -37,8 +51,10 @@ const Events = () => {
   // Function to handle automatic switching of events
   const handleAutoSwitch = () => {
     setCurrentIndex((prevIndex) => {
+      // console.log("prev index is ", prevIndex);
       const newIndex = (prevIndex + 1) % eventsItems?.length;
-      return newIndex;
+      console.log("new index is ", newIndex);
+      // return newIndex || (prevIndex + 1) % 3;
     });
   };
 
@@ -82,9 +98,15 @@ const Events = () => {
                 <p className="w-full h-[10%] pr-3 text-end mt-2">
                   {event?.["_event_date"] || "Loading..."}
                 </p>
-                <p className="w-full h-[90%] p-3 sm:leading-loose text-[14px] sm:text-[20px]">
-                  {event?.["_event_content"] || "Loading..."}
+                <p className="w-full h-[80%] p-3 sm:leading-loose text-[14px] sm:text-[20px] line-clamp-6">
+                  {`${event?.["_event_content"] || "Loading..."}`}
                 </p>
+                <button
+                  className="h-[10%] rounded-md w-[30%] text-[10px] sm:text-[14px] text-white bg-[#6D505F] mx-auto"
+                  onClick={() => navigate("/events")}
+                >
+                  Read more...
+                </button>
               </div>
             </div>
           );
