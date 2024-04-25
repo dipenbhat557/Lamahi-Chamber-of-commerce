@@ -1,5 +1,3 @@
-Here's a README.md template for the Lamahi Chamber of Commerce project:
-
 ````markdown
 # Lamahi Chamber of Commerce
 
